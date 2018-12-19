@@ -21,6 +21,7 @@ import com.framework.utilities.TimeerAction;
 public class BaseClass {
 	public WebDriver driver;
 	public static String browser="";
+	public static String url="";
 	public WebDriver initializeDriver() throws Exception {
 	Properties property=new Properties();
 	FileInputStream fis=new FileInputStream("D:\\git\\SeleniumFramework1.0\\FramworkSelenium\\src\\main\\java\\Loader.properties");
@@ -28,6 +29,7 @@ public class BaseClass {
 	browser=property.getProperty("Browser");
 	String webdriverName=property.getProperty("webdriverName");
 	String webdriverLocation=property.getProperty("webdriverLocation");
+	url=property.getProperty("URL");
 	if(browser.equalsIgnoreCase("Chrome")) {
 		System.setProperty(webdriverName,webdriverLocation);
 		driver=new ChromeDriver();
