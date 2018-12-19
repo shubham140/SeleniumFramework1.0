@@ -13,7 +13,7 @@ import com.framework.baseclass.BaseClass;
 
 /**
  * @author Shubham
- *
+ * here we are clicking on register button
  */
 public class HomePage extends BaseClass {
 	
