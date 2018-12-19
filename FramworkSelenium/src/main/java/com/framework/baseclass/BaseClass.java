@@ -4,12 +4,14 @@
 package com.framework.baseclass;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+//import java.io.FileNotFoundException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.framework.utilities.TimeerAction;
 
 
 /**
@@ -17,8 +19,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
  *
  */
 public class BaseClass {
+	public WebDriver driver;
 	public static String browser="";
-	public void initializeDriver() throws Exception {
+	public WebDriver initializeDriver() throws Exception {
 	Properties property=new Properties();
 	FileInputStream fis=new FileInputStream("D:\\git\\SeleniumFramework1.0\\FramworkSelenium\\src\\main\\java\\Loader.properties");
 	property.load(fis);
@@ -27,11 +30,17 @@ public class BaseClass {
 	String webdriverLocation=property.getProperty("webdriverLocation");
 	if(browser.equalsIgnoreCase("Chrome")) {
 		System.setProperty(webdriverName,webdriverLocation);
-		WebDriver driver=new ChromeDriver();
+		driver=new ChromeDriver();
+		TimeerAction timer=new TimeerAction(driver);
+		timer.implicitWaitAction(10);
+		timer.maximizeAction();
 		
 	}
 	else {
 		// Firefox and other browser part are still to develop.
 	}
+	
+	
+	return driver;
 }
 }
