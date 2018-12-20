@@ -37,10 +37,10 @@ public class TestSuite_001 extends BaseClass {
 		Object[][] data=new Object[1][2];
 		data[0][0]="asde@exc.com";
 		data[0][1]="1221211jfd";
-		data[1][0]="invalid@ueie.com";
-		data[1][1]="imvalidpass";
-		data[2][0]="shubhamchawla140@gmail.com";
-		data[2][1]="Samsung007";
+		data[0][2]="invalid@ueie.com";
+		data[1][0]="imvalidpass";
+		data[1][1]="shubhamchawla140@gmail.com";
+		data[1][2]="Samsung007";
 	}
 	
 }
