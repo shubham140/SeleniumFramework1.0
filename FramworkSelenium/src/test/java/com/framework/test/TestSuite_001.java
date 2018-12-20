@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import com.framework.baseclass.BaseClass;
 import com.framework.pomclasses.HomePage;
+import com.framework.pomclasses.RegisterUser;
 
 /**
  * @author Shubham
@@ -43,4 +44,9 @@ public class TestSuite_001 extends BaseClass {
 		data[1][2]="Samsung007";
 	}
 	
+	@Test(priority=2,dependsOnMethods="registerUser")
+	public void addNewUser() {
+		RegisterUser ruser=new RegisterUser(driver);
+		ruser.registerUser();
+	}
 }

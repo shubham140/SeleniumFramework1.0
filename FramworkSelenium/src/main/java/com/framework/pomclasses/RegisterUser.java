@@ -32,7 +32,7 @@ public class RegisterUser extends BaseClass{
 	@FindBy(how=How.XPATH,using="//*[@name='user[password]']")
 	WebElement password;
 	
-	@FindBy(how=How.XPATH,using="'//*[@name='user[password_confirmation']")
+	@FindBy(how=How.XPATH,using="//*[@name='user[password_confirmation]']")
 	WebElement confirmPassword;
 	
 	@FindBy(how=How.XPATH,using="//input[@id='user_unsubscribe_from_marketing_emails']")
