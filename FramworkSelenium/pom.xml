@@ -7,6 +7,20 @@
   <version>1.0-SNAPSHOT</version>
   <name>FramworkSelenium</name>
   <url>http://maven.apache.org</url>
+  <build>
+  <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M2</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+</plugins>
+  </build>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -28,7 +42,7 @@
     <scope>test</scope>
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-<dependency>
+<dependency>s
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
     <version>4.0.6</version>
