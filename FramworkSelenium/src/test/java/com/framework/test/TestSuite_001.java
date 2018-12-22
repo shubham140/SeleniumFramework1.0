@@ -3,6 +3,8 @@
  */
 package com.framework.test;
 
+
+
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -11,17 +13,22 @@ import com.framework.baseclass.BaseClass;
 import com.framework.pomclasses.HomePage;
 import com.framework.pomclasses.RegisterUser;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * @author Shubham
  *
  */
 public class TestSuite_001 extends BaseClass {
 
-	
+	private static Logger log=LogManager.getLogger(	TestSuite_001.class.getName());
 	
 	@BeforeTest
 	public void initializeDriverTest() throws Exception {
+	log.debug("Setting chrome driver property");
 	driver=	initializeDriver();
+	log.info("Window Maximized");
 	driver.get(url);
 	}
 	
